@@ -1,0 +1,203 @@
+:root {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  line-height: 1.4;
+  font-weight: 400;
+  color: #12253a;
+  background: linear-gradient(120deg, #dff6ff 0%, #f4f7ff 100%);
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+}
+
+h1,
+h2,
+h3,
+p {
+  margin: 0;
+}
+
+a {
+  color: #0f4f8c;
+  text-decoration: none;
+}
+
+#root {
+  min-height: 100vh;
+}
+
+.auth-page,
+.dashboard-page {
+  min-height: 100vh;
+  padding: 24px;
+}
+
+.auth-page {
+  display: grid;
+  place-items: center;
+}
+
+.card {
+  background: #ffffff;
+  border: 1px solid #d5e6f8;
+  border-radius: 14px;
+  box-shadow: 0 12px 30px rgba(20, 60, 100, 0.08);
+  padding: 24px;
+}
+
+.auth-card {
+  width: 100%;
+  max-width: 420px;
+  display: grid;
+  gap: 14px;
+}
+
+.auth-form,
+.task-form {
+  display: grid;
+  gap: 10px;
+}
+
+input,
+textarea,
+select {
+  border: 1px solid #c7d7ea;
+  border-radius: 8px;
+  padding: 10px 12px;
+  font-size: 0.95rem;
+}
+
+textarea {
+  resize: vertical;
+}
+
+button {
+  border: none;
+  border-radius: 8px;
+  padding: 10px 14px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.btn-primary {
+  background: #0f6bff;
+  color: #ffffff;
+}
+
+.btn-secondary {
+  background: #e8f0fb;
+  color: #12345a;
+}
+
+.btn-danger {
+  background: #fce7e7;
+  color: #a32020;
+}
+
+.auth-footer {
+  font-size: 0.92rem;
+}
+
+.dashboard-page {
+  max-width: 980px;
+  margin: 0 auto;
+  display: grid;
+  gap: 16px;
+}
+
+.dashboard-header {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  align-items: center;
+}
+
+.form-row {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.form-row > * {
+  flex: 1;
+}
+
+.message {
+  padding: 10px 12px;
+  border-radius: 8px;
+  border: 1px solid;
+}
+
+.message.success {
+  background: #edf9ef;
+  border-color: #b3e4bb;
+  color: #176c2a;
+}
+
+.message.error {
+  background: #fff1f1;
+  border-color: #efb7b7;
+  color: #8e1919;
+}
+
+.admin-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+
+.task-list {
+  list-style: none;
+  margin: 12px 0 0;
+  padding: 0;
+  display: grid;
+  gap: 10px;
+}
+
+.task-item {
+  border: 1px solid #d9e5f3;
+  border-radius: 10px;
+  padding: 12px;
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  flex-wrap: wrap;
+  background: #fbfdff;
+}
+
+.task-item p {
+  margin: 4px 0 6px;
+}
+
+.task-actions {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+
+@media (max-width: 680px) {
+  .dashboard-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .form-row > * {
+    min-width: 100%;
+  }
+  .task-actions {
+    width: 100%;
+  }
+  .task-actions button {
+    flex: 1;
+  }
+}

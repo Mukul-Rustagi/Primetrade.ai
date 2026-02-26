@@ -1,0 +1,20 @@
+# Dependencies
+backend/node_modules/
+frontend/node_modules/
+
+# Build outputs
+frontend/dist/
+
+# Env files
+backend/.env
+frontend/.env
+
+# Local tool metadata
+.zencoder/
+.zenflow/
+backend/_backend_git_backup/
+
+# OS/IDE
+.DS_Store
+Thumbs.db
+.vscode/

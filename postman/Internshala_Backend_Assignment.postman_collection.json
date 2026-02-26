@@ -1,0 +1,270 @@
+{
+  "info": {
+    "_postman_id": "6c06b4b1-2f44-4d6d-87ee-5aa93f30f8ef",
+    "name": "Internshala Backend Assignment",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": "Collection for authentication, role-based access, and task CRUD APIs."
+  },
+  "item": [
+    {
+      "name": "Auth - Register",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "url": {
+          "raw": "{{baseUrl}}/auth/register",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "auth",
+            "register"
+          ]
+        },
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"name\": \"Admin User\",\n  \"email\": \"admin@example.com\",\n  \"password\": \"Password123\",\n  \"role\": \"admin\",\n  \"adminInviteToken\": \"{{adminInviteToken}}\"\n}"
+        }
+      }
+    },
+    {
+      "name": "Auth - Login",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "url": {
+          "raw": "{{baseUrl}}/auth/login",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "auth",
+            "login"
+          ]
+        },
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"email\": \"admin@example.com\",\n  \"password\": \"Password123\"\n}"
+        }
+      }
+    },
+    {
+      "name": "Auth - Me",
+      "request": {
+        "method": "GET",
+        "header": [
+          {
+            "key": "Authorization",
+            "value": "Bearer {{token}}"
+          }
+        ],
+        "url": {
+          "raw": "{{baseUrl}}/auth/me",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "auth",
+            "me"
+          ]
+        }
+      }
+    },
+    {
+      "name": "Tasks - Create",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Authorization",
+            "value": "Bearer {{token}}"
+          },
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "url": {
+          "raw": "{{baseUrl}}/tasks",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "tasks"
+          ]
+        },
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"title\": \"Ship assignment\",\n  \"description\": \"Complete backend + frontend\",\n  \"status\": \"pending\",\n  \"priority\": \"high\"\n}"
+        }
+      }
+    },
+    {
+      "name": "Tasks - List",
+      "request": {
+        "method": "GET",
+        "header": [
+          {
+            "key": "Authorization",
+            "value": "Bearer {{token}}"
+          }
+        ],
+        "url": {
+          "raw": "{{baseUrl}}/tasks",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "tasks"
+          ]
+        }
+      }
+    },
+    {
+      "name": "Tasks - Get By Id",
+      "request": {
+        "method": "GET",
+        "header": [
+          {
+            "key": "Authorization",
+            "value": "Bearer {{token}}"
+          }
+        ],
+        "url": {
+          "raw": "{{baseUrl}}/tasks/{{taskId}}",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "tasks",
+            "{{taskId}}"
+          ]
+        }
+      }
+    },
+    {
+      "name": "Tasks - Update",
+      "request": {
+        "method": "PATCH",
+        "header": [
+          {
+            "key": "Authorization",
+            "value": "Bearer {{token}}"
+          },
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "url": {
+          "raw": "{{baseUrl}}/tasks/{{taskId}}",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "tasks",
+            "{{taskId}}"
+          ]
+        },
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"status\": \"completed\"\n}"
+        }
+      }
+    },
+    {
+      "name": "Tasks - Delete",
+      "request": {
+        "method": "DELETE",
+        "header": [
+          {
+            "key": "Authorization",
+            "value": "Bearer {{token}}"
+          }
+        ],
+        "url": {
+          "raw": "{{baseUrl}}/tasks/{{taskId}}",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "tasks",
+            "{{taskId}}"
+          ]
+        }
+      }
+    },
+    {
+      "name": "Admin - Users",
+      "request": {
+        "method": "GET",
+        "header": [
+          {
+            "key": "Authorization",
+            "value": "Bearer {{token}}"
+          }
+        ],
+        "url": {
+          "raw": "{{baseUrl}}/admin/users",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "admin",
+            "users"
+          ]
+        }
+      }
+    },
+    {
+      "name": "Admin - Stats",
+      "request": {
+        "method": "GET",
+        "header": [
+          {
+            "key": "Authorization",
+            "value": "Bearer {{token}}"
+          }
+        ],
+        "url": {
+          "raw": "{{baseUrl}}/admin/stats",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "admin",
+            "stats"
+          ]
+        }
+      }
+    }
+  ],
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "http://localhost:5000/api/v1"
+    },
+    {
+      "key": "token",
+      "value": ""
+    },
+    {
+      "key": "taskId",
+      "value": ""
+    },
+    {
+      "key": "adminInviteToken",
+      "value": "change_this_for_admin_registration"
+    }
+  ]
+}
